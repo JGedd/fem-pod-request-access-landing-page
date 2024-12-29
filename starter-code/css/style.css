@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  /* Green */
+  --green: hsl(157, 74%, 62%);
+
+  /* Blue */
+  --blue-950: hsl(224, 35%, 11%);
+  --blue-900: hsl(225, 26%, 23%);
+  --blue-600: hsl(225, 21%, 45%);
+  --blue-300: hsl(225, 40%, 83%);
+
+  /* White */
+  --white: hsl(0, 0%, 100%);
+
+  /* Red */
+  --red: hsl(0, 96%, 61%);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1rem = 10px, 10px/16px = 62.5% */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Chivo', serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  background-color: var(--blue-950);
+  min-height: 100vh;
+  position: relative;
+
+  background-image: url(../assets/desktop/image-host.jpg);
+  background-repeat: no-repeat;
+  background-position: right 13.5rem;
+}
+
+.container {
+  max-width: 128rem;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.header {
+  margin: 13.5rem 0 15rem 0;
+}
+
+.hero {
+  width: 73.6rem;
+  padding: 8rem 7rem 0 0;
+  background-color: var(--blue-950);
+
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.hero__content {
+  order: 1;
+}
+
+.hero__heading {
+  font-size: 4.8rem;
+  font-weight: 300;
+  line-height: 120%;
+  color: var(--green);
+  text-transform: uppercase;
+  margin-bottom: 2.4rem;
+}
+
+.hero__heading--white {
+  color: var(--white);
+}
+
+.hero__paragraph {
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 150%;
+  color: var(--blue-300);
+}
+
+#form {
+  order: 2;
+}
+
+.form-control {
+  position: relative;
+  margin-bottom: 0.8rem;
+}
+
+.form-control small {
+  color: var(--red);
+  font-size: 1.2rem;
+  font-weight: 700;
+  position: absolute;
+  left: 3rem;
+  bottom: -2.5rem;
+  display: none;
+}
+
+.form-control.error small {
+  display: block;
+}
+
+input {
+  background-color: var(--blue-900);
+  border: 2px solid transparent;
+  border-radius: 2.8rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 200%;
+  padding: 1.2rem 2.4rem;
+
+  width: 70%;
+  height: 5.2rem;
+}
+
+.form-control.error input {
+  border-color: var(--red);
+}
+
+.form-control.success input {
+  border-color: var(--green);
+}
+
+.form-control.error input::placeholder {
+  color: var(--white);
+}
+
+.btn {
+  background-color: var(--green);
+  width: 17.3rem;
+  height: 4.4rem;
+  box-shadow: 0 2px 4px 0 hsl(157, 74%, 62%, 14%);
+  border: 0;
+  border-radius: 2.8rem;
+  cursor: pointer;
+  padding: 0.8rem 3.2rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--blue-950);
+
+  position: absolute;
+  top: 5%;
+  left: calc(45% - 1rem);
+}
+
+.btn:hover {
+  background-color: hsl(157, 76%, 81%, 100%);
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+
+  order: 3;
+}
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background-image: url(../assets/tablet/image-host.jpg);
+    background-repeat: no-repeat;
+    background-position: right top;
+  }
+
+  .container {
+    padding: 0;
+  }
+
+  .header {
+    margin: 15.6rem 0 10rem 4.4rem;
+  }
+
+  .hero {
+    width: 59.2rem;
+    margin-left: 4.4rem;
+    padding: 8rem 4.4rem 0 0;
+  }
+
+  .btn {
+    top: 8%;
+    left: 38%;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 1rem;
+    right: -16%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  body {
+    background-image: url(../assets/mobile/image-host.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+  }
+
+  .container {
+    max-width: 30rem;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .header {
+    margin: 15.6rem 0 5.6rem 4.4rem;
+    padding: 1rem;
+  }
+
+  .hero {
+    width: 30.3rem;
+    margin: 0;
+    padding: 0 3.6rem;
+    background-color: transparent;
+  }
+
+  .hero-content {
+    order: 1;
+  }
+
+  .hero__heading {
+    font-size: 3.2rem;
+    text-align: center;
+    margin-bottom: 1.6rem;
+  }
+
+  .hero__paragraph {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  #form {
+    order: 3;
+  }
+
+  .form-control small {
+    bottom: -7rem;
+  }
+
+  input {
+    width: 100%;
+    height: 4.4rem;
+  }
+
+  .btn {
+    width: 100%;
+    top: 5rem;
+    left: 0;
+  }
+
+  .socials {
+    gap: 1.7rem;
+    order: 2;
+  }
+
+  .socials img {
+    display: block;
+    max-width: 100%;
+  }
+
+  footer {
+    display: none;
+  }
+}
